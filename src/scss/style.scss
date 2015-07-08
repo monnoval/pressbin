@@ -1,0 +1,125 @@
+/*!
+Theme Name: Pressbin
+Theme URI: http://
+Author: Mon Noval
+Author URI: http://monnoval.com/
+Description:
+Version: 0.1
+Text Domain: pressbin
+*/
+
+// ==========================================================================
+// SETTINGS
+// ==========================================================================
+//
+// Globally-available settings
+// Config switches
+// Brand colours
+
+@import "settings.colors";
+@import "settings.defaults";
+
+
+// ==========================================================================
+// TOOLS
+// ==========================================================================
+//
+// Globally-available tools.
+// Public mixins.
+// Helper functions.
+
+@import "inuit-functions/tools.functions";
+@import "tools.mixins";
+
+
+// ==========================================================================
+// GENERIC
+// ==========================================================================
+//
+// Ground zero styles.
+// Low-specificity, far-reaching.
+// Resets, Normalize.css, etc.
+
+@import "inuit-normalize/generic.normalize";
+@import "inuit-reset/generic.reset";
+@import "inuit-box-sizing/generic.box-sizing";
+@import "generic.shared";
+
+
+// ==========================================================================
+// BASE
+// ==========================================================================
+//
+// Unclasses HTML elements.
+// H1-H6, basic links, lists, etck.
+// Last layer we see type selectors (e.g. a{}, blockquote{}).
+
+@import "base.page";
+@import "base.headings";
+@import "base.type";
+@import "base.links";
+@import "inuit-images/base.images";
+
+
+// ==========================================================================
+// OBJECTS
+// ==========================================================================
+//
+// OOCSS.
+// Design patterns.
+// No cosmetics.
+// Begin using classes exclusively.
+// Agnotiscally named (e.g. .ui-list{}).
+//
+// Name classes that do not describe content.
+
+@import "objects.layout";
+
+
+// ==========================================================================
+// COMPONENTS
+// ==========================================================================
+//
+// Designed pieces of UI.
+// Still only using classes.
+// More explicitly named (e.g. .products-list {})
+
+@import "components.icons";
+@import "components.footer";
+@import "components.header";
+@import "components.logo";
+@import "components.menus";
+@import "components.footer";
+@import "components.code";
+@import "components.bootstrap.modal";
+
+
+
+// ==========================================================================
+// TRUMPS
+// ==========================================================================
+//
+// Overrides, helpers, utilities.
+// Only affect one piece of the DOM at a time.
+// Usually carry !important.
+
+@import "inuit-clearfix/trumps.clearfix";
+@import "trumps.helpers";
+@import "trumps.shame";
+
+
+@import "external.codemirror";
+
+.CodeMirror {
+  height: auto;
+}
+
+
+@import "external.jquery.layout";
+
+.noscroll{
+  overflow: hidden !important;
+}
+.nopadding {
+  padding: 0 !important;
+}

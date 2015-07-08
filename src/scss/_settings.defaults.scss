@@ -1,0 +1,32 @@
+// DEFAULTS
+// ==========================================================================
+
+// Based from
+// https://github.com/inuitcss/settings.defaults/blob/master/_settings.defaults.scss
+
+
+// High-level base settings.
+
+$base-font-size:   16px  !default;
+$base-line-height: 24px  !default;
+$base-site-width:  1020px !default;
+
+
+// These variables are framework variables, sourced from variables defined
+// above. Feel free to use these variables throughout your project, but do not
+// modify or reassign them.
+
+$base-spacing-unit:           $base-line-height;
+$base-spacing-unit--small:    round($base-spacing-unit / 2);
+$base-spacing-unit--large:    round($base-spacing-unit * 2);
+
+
+// Based from
+// bower_components/bower-bourbon/addons/_font-family.scss
+
+$font-georgia:       Georgia, Cambria, "Times New Roman", Times, serif;
+$font-helvetica:     "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$font-lucida-grande: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+$font-monospace:     "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
+$font-verdana:       Verdana, Geneva, sans-serif;
+

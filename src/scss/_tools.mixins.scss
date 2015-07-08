@@ -1,0 +1,112 @@
+// MIXINS
+// ==========================================================================
+
+
+// Apply ‘attention’ styles in one go.
+@mixin attention($self: false) {
+  @if($self != false) {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+
+  @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+
+// Generate Helvetica Neue’s numbered font-weights from their aliases.
+@mixin font-weight($font-weight) {
+  @if ($font-weight == "regular") {
+    font-weight: 300;
+  }
+
+  @if ($font-weight == "bold") {
+    font-weight: 600;
+  }
+}
+
+// Generate Raleway's numbered font-weights from their aliases.
+// @mixin font-weight($font-weight) {
+//   @if ($font-weight == "regular") {
+//     font-weight: 400;
+//   }
+//   @if ($font-weight == "semibold") {
+//     font-weight: 600;
+//   }
+//   @if ($font-weight == "bold") {
+//     font-weight: 700;
+//   }
+// }
+
+
+@mixin font-size($font-size, $line-height: auto) {
+
+  font-size: $font-size;
+  font-size: ($font-size / $base-font-size) * 1rem;
+  @if $line-height == auto {
+    line-height: ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+  }
+
+  @else {
+
+    @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
+      line-height: $line-height;
+    }
+
+    @elseif ($line-height != none and $line-height != false) {
+      @warn "D’oh! ‘#{$line-height}’ is not a valid value for `line-height`."
+    }
+
+  }
+
+}
+
+
+@mixin margin($location: bottom, $rem: 0.8rem) {
+  margin-#{$location}: $base-spacing-unit;
+  margin-#{$location}: ($base-spacing-unit / $base-font-size) * $rem;
+}
+
+
+
+@mixin tpl( $tpl: '' ) {
+  $prefix: '';
+  $tpl-name: false !default;
+  @if $tpl-name {
+    .#{ $prefix + $tpl-name + $tpl} {
+      @content;
+    }
+  }
+  @else {
+    @error "$tpl-name is not defined.";
+  }
+}
+
+// If you're going to use prefix "br" (for pressbin) on folder names
+// Prefix in directory names would make the structure more readable
+// e.g.
+//   br-group-tpl-home/
+//   br-solo-single-room/
+//   br-solo-tpl-home/
+//
+// @mixin br( $br: '' ) {
+//   $prefix: 'br-';
+//   $br-name: false !default;
+//   @if $br-name {
+//     .#{ $prefix + $br-name + $br} {
+//       @content;
+//     }
+//   }
+//   @else {
+//     @error "$br-name is not defined.";
+//   }
+// }

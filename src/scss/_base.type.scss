@@ -1,0 +1,29 @@
+// TYPE
+// ==========================================================================
+
+// Based from csswizardry
+// https://github.com/csswizardry/csswizardry.github.com/blob/master/css/_base.page.scss
+// https://raw.githubusercontent.com/csswizardry/csswizardry.github.com/master/css/_base.type.scss
+
+html {
+  font-family: Raleway, $font-helvetica;
+  @include font-weight(regular);
+}
+
+
+// Emboldened elements.
+strong, b,
+dt {
+  @include font-weight(semibold);
+}
+
+
+// Horizontal rules.
+hr {
+  border: none;
+  border-bottom: 1px solid $color-gray-ccc;
+  margin-bottom: $base-spacing-unit - 1px;
+}
+
+
+

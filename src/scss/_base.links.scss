@@ -1,0 +1,32 @@
+// LINKS
+// ==========================================================================
+
+a {
+  color: $color-gray;
+
+  transition: 0.2s;
+  @include attention() {
+    color: $color-gray-darker;
+  }
+}
+
+//.link-quiet {
+//    color: $color-gray-light;
+//    text-decoration: underline;
+//
+//    @include attention() {
+//        color: $color-links;
+//    }
+//
+//}
+
+// .link-secret {
+//     color: inherit;
+//     @include font-weight(regular);
+
+//     @include attention() {
+//         color: $color-links;
+//         text-decoration: none;
+//     }
+
+// }

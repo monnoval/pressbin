@@ -1,0 +1,21 @@
+// COLORS
+// ==========================================================================
+
+// Based from
+// https://github.com/csswizardry/csswizardry.github.com/blob/master/css/_settings.colors.scss
+
+$color-gray-darker:              lighten(#000, 13.5%) !default;      // #222
+$color-gray-dark:                lighten(#000, 20%)   !default;      // #333
+$color-gray:                     lighten(#000, 33.5%) !default;      // #555
+$color-gray-light:               lighten(#000, 60%)   !default;      // #999
+$color-gray-lighter:             lighten(#000, 93.5%) !default;      // #eee
+$color-gray-ccc:                 lighten($color-gray-light, 20%) !default; // #ccc
+
+// Base
+
+$color-base-bg:     #ffffff !default;
+$color-base-txt:    #000000 !default;
+
+
+
+
