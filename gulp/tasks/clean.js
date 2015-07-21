@@ -1,8 +1,6 @@
-var gulp = require('gulp')
-  , del  = require('del')
-;
-var dir = require('../config').dir;
+var del  = require('del');
 
-gulp.task('clean', ['build'], function(cb) {
-  del([dir.build+'**/.DS_Store'], cb)
+
+gulp.task('clean', function(cb) {
+  del([build], cb)
 });

@@ -1,7 +1,6 @@
-var gulp = require('gulp');
-var dir = require('../config').dir;
+var fonts = 'fonts/';
 
 gulp.task('fonts', function() {
-  return gulp.src(dir.source+dir.fonts+'**/*')
-  .pipe(gulp.dest(dir.build+dir.fonts));
+  return gulp.src(source+fonts+'**/*')
+  .pipe(gulp.dest(build+fonts));
 });

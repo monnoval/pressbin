@@ -1,18 +1,15 @@
-var gulp = require('gulp');
-var tpl = require('../config').tpl;
+setup_tasks_for_build = function() {
+  for(var index in tpl) {
+    var attr = tpl[index];
+    var tpl_tasks = [
+      attr.dir+'-css'
+    , attr.dir+'-js'
+    , attr.dir+'-php'
+    ];
+    tasks.push.apply(tasks, tpl_tasks)
+  }
+  console.log( tasks );
+};
+setup_tasks_for_build();
 
-
-gulp.task( 'build',
-  [ 'core-css'
-  , 'core-js'
-  , 'images'
-  , 'languages'
-  , 'fonts'
-  , 'php'
-  , 'php-inc'
-
-  , tpl.home.dir+'-css'
-  , tpl.home.dir+'-js'
-  , tpl.home.dir+'-php'
-
-  ] );
+gulp.task('build', tasks);

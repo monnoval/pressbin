@@ -1,51 +1,24 @@
-var project     = 'pressbin'
-  , build       = './build/'
-  , dist        = './dist/'
-  , source      = './src/' // 'source' instead of 'src' to avoid confusion with gulp.src
-  , lang        = 'languages/'
-  , fonts       = 'fonts/'
-  , bower       = './bower_components/'
+var project = 'pressbin'
+  , source  = './src/'
+  , bower   = './bower_components/'
+  , build   = './build/'
+  , proxy   = 'fbpatternlab.dev'
 ;
-
-var lazypipe     = require('lazypipe')
-  , sass         = require('gulp-sass')
-  , autoprefixer = require('gulp-autoprefixer')
-  , rename       = require('gulp-rename')
-  , minifyCss    = require('gulp-minify-css')
-  , uglify       = require('gulp-uglify')
-;
-
-var css_sass = lazypipe()
-  .pipe(sass, {includePaths: [bower, source+'scss'], errLogToConsole: true})
-  .pipe(autoprefixer, 'last 2 versions', 'ie 9', 'ios 6', 'android 4');
-var css_min = lazypipe()
-  .pipe(rename, {suffix: '.min'})
-  .pipe(minifyCss, { keepSpecialComments: 1 });
-var js_min = lazypipe()
-  .pipe(rename, {suffix: '.min'})
-  .pipe(uglify);
-var on_error = function(err) { console.log(err) }
-
-var tpl = {
-  home:     'tpl-home',
-};
 
 module.exports = {
   project: project,
-  dir: {
-    build:   build,
-    dist:    dist,
-    source:  source,
-    lang:    lang,
-    fonts:   fonts,
-    bower:   bower,
-  },
-  fn: {
-    css_sass: css_sass,
-    css_min:  css_min,
-    js_min:   js_min,
-    on_error: on_error,
-  },
+  source:  source,
+  bower:   bower,
+  build:   build,
+  proxy:   proxy,
+  tasks: [ 'core-css'
+         , 'core-js'
+         , 'images'
+         , 'languages'
+         , 'fonts'
+         , 'php'
+         , 'php-inc'
+         , 'php-code' ],
   core: {
     js: { filename: 'core.js', js: [
       // bower+'codemirror/lib/codemirror.js',
@@ -60,6 +33,6 @@ module.exports = {
     ] },
   },
   tpl: {
-    home:          { dir: tpl.home, js: [] },
+    home:          { dir: 'tpl-home', js: [] },
   },
 };
