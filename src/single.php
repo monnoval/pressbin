@@ -40,6 +40,7 @@ pressbin_create_html( $post );
   <iframe style="border: 0 none" src="<?php echo  $iframe_url ?>" width="100%" height="100%" ></iframe>
 
   <!-- Modal -->
+  <?php while ( have_posts() ) : the_post(); ?>
   <div class="modal fade" id="js__details_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -59,6 +60,7 @@ pressbin_create_html( $post );
       </div>
     </div>
   </div>
+  <?php endwhile; // end of the loop. ?>
 
 </div>
 
