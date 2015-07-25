@@ -20,7 +20,7 @@ module.exports = {
          , 'php-inc'
          , 'php-code' ],
   core: {
-    js: { filename: 'core.js', js: [
+    js: { filename: 'core', js: [
       // bower+'codemirror/lib/codemirror.js',
       // bower+'codemirror/mode/xml/xml.js',
       // bower+'codemirror/mode/css/css.js',
